@@ -17,29 +17,11 @@ convenience/reporting commands built on top of it.
 Where `PS.GitHub` is deliberately narrow and agent-facing, `PS.GHOps` is for a
 human running ad-hoc org reports and maintenance from a shell.
 
-## Function inventory
+## Functions
 
-### Public functions (exported via manifest)
+One `.ps1` per exported function in `Public/`, named `Verb-GHNoun.ps1`; each function's comment-based help (`.SYNOPSIS` + `.NOTES Status:`) is the source of truth for what it does and its maturity. Authoritative export list: `FunctionsToExport` in [PS.GHOps.psd1](PS.GHOps.psd1). User-facing catalog: the README function table.
 
-| Function | Status | Purpose |
-|---|---|---|
-| `Get-GHActivity` | Experimental | A user's recent issue/PR activity via `gh search`, categorized by lifecycle event. |
-| `Get-GHIssue` | Experimental | Issue report scoped by org, repo-name prefix, or explicit repo list (`gh search issues`). |
-| `Get-GHOpenBranch` | Experimental | Non-default branches across an org's active repos (`gh repo list` + branches REST). |
-| `Get-GHRepoFile` | Experimental | Presence/absence of a repo-relative file path across an org's repos. |
-| `Get-GHUnpinnedAction` | Experimental | Reports workflow `uses:` action refs not pinned to a commit SHA, across an org or explicit repos. |
-| `New-GHIssue` | Experimental | Creates an issue in a repository with optional body, labels, assignees, and milestone (issues REST). |
-| `New-GHLabel` | Experimental | Creates one or more labels in one or more repositories; skip-or-`-Update` on an existing label. |
-| `Remove-GHStaleCodeScan` | Beta | Removes orphaned code-scanning analyses that block PRs after a scanning workflow is renamed. |
-
-### Private helpers (dot-sourced, not exported)
-
-| Helper | Purpose |
-|---|---|
-| `Invoke-GHCli` | Runs a `gh` **subcommand** with `$PSNativeCommandUseErrorActionPreference` isolation, `$LASTEXITCODE` checking, a consistent terminating error on failure, and optional `-AsJson` parsing. Subcommands only. |
-| `Invoke-GHApi` | REST counterpart: runs `gh api <Path>` with the same preference isolation, `-AllowNotFound` (404 → `$null`), `-Paginate` (flattens `--slurp` pages), `-Field` (hashtable request body: strings via `-f key=value`, integers via typed `-F key=value`, arrays via repeated `-f key[]=element`), and JSON parsing. |
-
-`FunctionsToExport` in [PS.GHOps.psd1](PS.GHOps.psd1) is the authoritative export list.
+Two private helpers in `Private/` (not exported) wrap the two `gh` lanes (see cross-cutting rule 1) — `Invoke-GHCli` for `gh` subcommands and `Invoke-GHApi` for `gh api` REST calls; their comment-based help documents parameters and behavior.
 
 ## Cross-cutting rules every public function honors
 
@@ -55,13 +37,12 @@ human running ad-hoc org reports and maintenance from a shell.
 PS.GHOps/
   .devcontainer/         devcontainer + Dockerfile (installs gh CLI)
   .github/
-    workflows/ci.yml     Pester + PSScriptAnalyzer, matrix on ubuntu + windows + macos
-    workflows/release.yml fires on `v*.*.*` tag push; creates a GitHub Release with a .zip artifact
-    release.yml          auto-generated-release-notes categorization by PR label
+    workflows/           CI + release workflows
+    release.yml          release-notes categorization config
     dependabot.yml
     CODEOWNERS
   .vscode/               editor settings + PSScriptAnalyzer rules
-  Build/                 PSake harness (build.ps1 -> build.psake.ps1); module name derived from the .psd1 basename
+  Build/                 build harness (PSake)
   Public/                one .ps1 per exported function, Verb-GHNoun.ps1
   Private/               internal helpers, NOT exported
   Tests/                 Pester tests, Tests/Unit/<Function>.tests.ps1

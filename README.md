@@ -29,6 +29,7 @@ Import-Module ./PS.GHOps/PS.GHOps.psd1
 | `Get-GHActivity` | Your recent issue/PR activity, categorized by lifecycle event (opened/closed/merged). |
 | `Get-GHIssue` | Issue report scoped by org, repo-name prefix, or an explicit repo list. |
 | `Get-GHOpenBranch` | Non-default branches across an org's active repositories. |
+| `Get-GHPullRequest` | Pull requests related to a user (author, reviewer, assignee, etc.) across an org, repo-name prefix, or explicit repo list. |
 | `Get-GHRepoFile` | Whether a given file path (e.g. `.github/CODEOWNERS`) exists in each repo of an org. |
 | `Get-GHUnpinnedAction` | Workflow `uses:` action references not pinned to a commit SHA, across an org or specific repos. |
 | `New-GHIssue` | Create an issue in a repository, with optional body, labels, assignees, and milestone. |

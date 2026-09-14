@@ -35,6 +35,7 @@ Import-Module ./PS.GHOps/PS.GHOps.psd1
 | `New-GHIssue` | Create an issue in a repository, with optional body, labels, assignees, and milestone. |
 | `New-GHLabel` | Create one or more labels in one or more repositories. |
 | `Remove-GHStaleCodeScan` | Removes orphaned code-scanning analyses that block PRs after a scanning workflow is renamed. |
+| `Test-GHRepoBaseline` | Read-only drift report comparing repositories against a supplied settings baseline. |
 
 ## Examples
 

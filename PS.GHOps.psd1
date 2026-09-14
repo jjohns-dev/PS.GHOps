@@ -12,7 +12,7 @@
     # Major = significant changes, breaking changes or major new features
     # Minor = new functions or features
     # Build = bug fixes and minor updates
-    ModuleVersion        = '0.4.0'
+    ModuleVersion        = '0.5.0'
 
     # Supported PSEditions
     CompatiblePSEditions = @('Core')
@@ -49,6 +49,7 @@
         'New-GHIssue'
         'New-GHLabel'
         'Remove-GHStaleCodeScan'
+        'Test-GHRepoBaseline'
     )
 
     # Cmdlets to export from this module

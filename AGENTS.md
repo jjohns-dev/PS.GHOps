@@ -26,6 +26,7 @@ human running ad-hoc org reports and maintenance from a shell.
 | `Get-GHActivity` | Experimental | A user's recent issue/PR activity via `gh search`, categorized by lifecycle event. |
 | `Get-GHIssue` | Experimental | Issue report scoped by org, repo-name prefix, or explicit repo list (`gh search issues`). |
 | `Get-GHOpenBranch` | Experimental | Non-default branches across an org's active repos (`gh repo list` + branches REST). |
+| `Get-GHPullRequest` | Experimental | PRs related to a user by one or more relationships (author/assignee/mentioned/commenter/involves/review-requested/reviewed-by) across an org, prefix, or repo list; one `gh search prs` per role, unioned and deduped (`Roles` column). |
 | `Get-GHRepoFile` | Experimental | Presence/absence of a repo-relative file path across an org's repos. |
 | `Get-GHUnpinnedAction` | Experimental | Reports workflow `uses:` action refs not pinned to a commit SHA, across an org or explicit repos. |
 | `New-GHIssue` | Experimental | Creates an issue in a repository with optional body, labels, assignees, and milestone (issues REST). |

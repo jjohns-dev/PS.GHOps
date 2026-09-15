@@ -10,7 +10,7 @@ in this repo without re-reading every skill file from scratch.
 `PS.GHOps` is a **human-facing operator toolkit** for GitHub: org-scoped
 reporting and administration helpers over the `gh` CLI. It is the higher layer
 of a two-module design — the low-level, determinism-focused
-[`PS.GitHub`](https://github.com/johnsarie27/PS.GitHub) module is the substrate
+[`PS.GitHub`](https://github.com/jjohns-dev/PS.GitHub) module is the substrate
 (REST wrapper, signed commits, auth-scope checks); `PS.GHOps` holds the
 convenience/reporting commands built on top of it.
 

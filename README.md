@@ -4,7 +4,7 @@ A PowerShell **operator toolkit for GitHub** — human-facing reporting and
 administration helpers over the [`gh`](https://cli.github.com/) CLI.
 
 `PS.GHOps` is the higher layer of a two-module design: the low-level,
-determinism-focused [`PS.GitHub`](https://github.com/johnsarie27/PS.GitHub)
+determinism-focused [`PS.GitHub`](https://github.com/jjohns-dev/PS.GitHub)
 module is the substrate; `PS.GHOps` holds the convenience/reporting commands an
 operator reaches for from a shell.
 
@@ -18,7 +18,7 @@ operator reaches for from a shell.
 `PS.GHOps` is not published to the PowerShell Gallery. Install from a clone:
 
 ```powershell
-git clone https://github.com/johnsarie27/PS.GHOps.git
+git clone https://github.com/jjohns-dev/PS.GHOps.git
 Import-Module ./PS.GHOps/PS.GHOps.psd1
 ```
 

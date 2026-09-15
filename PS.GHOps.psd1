@@ -69,14 +69,14 @@
             Tags       = @('GitHub', 'gh', 'Operations', 'Reporting', 'Automation', 'DevOps')
 
             # A URL to the license for this module.
-            LicenseUri = 'https://github.com/johnsarie27/PS.GHOps/blob/main/LICENSE'
+            LicenseUri = 'https://github.com/jjohns-dev/PS.GHOps/blob/main/LICENSE'
 
             # A URL to the main website for this project.
-            ProjectUri = 'https://github.com/johnsarie27/PS.GHOps'
+            ProjectUri = 'https://github.com/jjohns-dev/PS.GHOps'
 
             # Release notes are auto-generated per tag from merged PR labels via
             # .github/release.yml. See:
-            # https://github.com/johnsarie27/PS.GHOps/releases
+            # https://github.com/jjohns-dev/PS.GHOps/releases
 
         } # End of PSData hashtable
 

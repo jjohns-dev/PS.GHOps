@@ -9,7 +9,7 @@
     }
 
     # Build/test tooling
-    Pester           = '5.7.1'
+    Pester           = '6.2.0'
     psake            = '5.0.4'
     PSScriptAnalyzer = '1.24.0'
 }

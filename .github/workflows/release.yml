@@ -13,7 +13,7 @@ concurrency:
 
 jobs:
   release:
-    uses: jjohns-dev/pwsh-module-ci/.github/workflows/release.yml@v1.3.1
+    uses: jjohns-dev/pwsh-module-ci/.github/workflows/release.yml@v1
     with:
       artifact-name: 'PS.GHOps-${{ github.ref_name }}'
     permissions:

@@ -16,7 +16,7 @@ jobs:
     uses: jjohns-dev/pwsh-module-ci/.github/workflows/ci.yml@v1
     with:
       # All three legs collect the same count, so one flat floor covers them.
-      min-tests: 9999 # SABOTAGE - reverted before merge
+      min-tests: 91 # 95 collected - min(floor(95 * 0.05), 10) = 95 - 4
     permissions:
       contents: read
       checks: write

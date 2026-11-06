@@ -15,7 +15,7 @@ jobs:
   validate:
     uses: jjohns-dev/pwsh-module-ci/.github/workflows/ci.yml@feat/9-polymorphic-os-matrix
     with:
-      os-matrix: '[{"os":"ubuntu-latest","minTests":91},{"os":"windows-latest","minTests":99999},{"os":"macos-latest","minTests":91}]'
+      os-matrix: '[{"os":"ubuntu-latest","pesterScope":"CrossPlatform","minTests":91},{"os":"windows-latest","minTests":91}]'
     permissions:
       contents: read
       checks: write

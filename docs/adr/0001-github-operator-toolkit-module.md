@@ -2,7 +2,7 @@
 
 ## Status
 
-Accepted. Superseded in part by [ADR-0002](0002-self-contained-gh-wrappers.md): the deferred `PS.GitHub` `RequiredModules` dependency is withdrawn in favor of a local `Invoke-GHApi`, so the module depends only on the `gh` CLI.
+Accepted. Superseded in part by [ADR-0002](0002-self-contained-gh-wrappers.md): the deferred `PS.GitHub` `RequiredModules` dependency is withdrawn in favor of a local `Invoke-GHApi`, so the module depends only on the `gh` CLI. The vendored PSake build is replaced by the shared [pwsh-module-ci harness](https://github.com/jjohns-dev/pwsh-module-ci/blob/main/docs/adr/0006-host-the-build-harness-in-this-repo.md) from `v2`.
 
 ## Context
 

@@ -90,8 +90,10 @@ function Get-GHNoun {
 
 ## Running the build locally
 
-The build harness lives under [`Build/`](Build/) and wraps PSake. First-time
-setup installs Pester, psake, and PSScriptAnalyzer:
+[`Build/build.ps1`](Build/build.ps1) is a shim that runs the shared build harness
+from `jjohns-dev/pwsh-module-ci` at the version `ci.yml` pins; see its
+[consumer guide](https://github.com/jjohns-dev/pwsh-module-ci/blob/main/docs/consumer-guide.md#running-the-build-locally).
+First-time setup installs the build tools:
 
 ```powershell
 ./Build/build.ps1 -ResolveDependency -TaskList Init

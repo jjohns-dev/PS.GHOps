@@ -42,7 +42,7 @@ PS.GHOps/
     dependabot.yml
     CODEOWNERS
   .vscode/               editor settings + PSScriptAnalyzer rules
-  Build/                 build harness (PSake)
+  Build/                 build.ps1 shim for the shared pwsh-module-ci harness
   Public/                one .ps1 per exported function, Verb-GHNoun.ps1
   Private/               internal helpers, NOT exported
   Tests/                 Pester tests, Tests/Unit/<Function>.tests.ps1

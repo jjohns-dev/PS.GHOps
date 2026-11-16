@@ -16,7 +16,7 @@ jobs:
     uses: jjohns-dev/pwsh-module-ci/.github/workflows/ci.yml@v2
     with:
       # Both legs collect the same count, so one flat floor covers them.
-      min-tests: 106 # 111 executed - min(floor(111 * 0.05), 10) = 111 - 5
+      min-tests: 145 # 152 executed - min(floor(152 * 0.05), 10) = 152 - 7
       os-matrix: '["ubuntu-latest", "windows-latest"]'
     permissions:
       contents: read
